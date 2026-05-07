@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CCIC Cinematic Reveal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<div id="app">
+ <div id="bokeh-scene" class="hidden">
+  <div id="orbs-container"></div>
+  <div id="particles-container"></div>
+ </div>
+ <div id="curtains">
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+  <div id="countdown-container" class="hidden">
+   <div id="countdown-number">10</div>
+  </div>
+ </div>
+ <div id="idle-state">
+  <div class="gold-line"></div>
+  <div class="touch-text">TOUCH TO BEGIN</div>
+ </div>
+ <div id="phase3" class="hidden phase-container">
+  <div class="stagger-line cg-caps">DEPARTMENT</div>
+  <div class="stagger-line fell-italic-gold">of</div>
+  <div class="divider gold-divider stagger-line"></div>
+  <div class="stagger-line cg-caps">COMPUTER SCIENCE</div>
+  <div class="stagger-line cg-caps">AND ENGINEERING</div>
+  <div class="divider gold-divider stagger-line"></div>
+  <div class="stagger-line cg-caps">ARTIFICIAL INTELLIGENCE</div>
+  <div class="stagger-line fell-italic-gold">&amp;</div>
+  <div class="stagger-line cg-caps">MACHINE LEARNING</div>
+ </div>
+ <div id="phase4" class="hidden phase-container">
+  <div class="proud-text">Proudly Presents</div>
+ </div>
+ <div id="phase5" class="hidden phase-container">
+  <div class="starbursts">
+   <div class="starburst" style="top:15%;left:15%;"></div>
+   <div class="starburst" style="top:15%;right:15%;"></div>
+   <div class="starburst" style="bottom:15%;left:15%;"></div>
+   <div class="starburst" style="bottom:15%;right:15%;"></div>
+  </div>
+  <div id="logoContainer">
+   <img id="ccic-logo" class="logo-image" src="/ccic-logo.png" alt="CCIC Logo" onerror="this.src='https://placehold.co/400x400/0a0f2e/d4af37?text=CCIC+Logo'">
+  </div>
+  <div id="ccic-reveal">
+    <div id="ccic-text">C C I C</div>
+    <div id="ccic-divider"></div>
+    <div id="ccic-subtitle">Computational and Cognitive Intelligence Club</div>
+  </div>
+ </div>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
