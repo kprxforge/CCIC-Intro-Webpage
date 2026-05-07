@@ -11,9 +11,21 @@ function init() {
     const phase4 = document.getElementById('phase4');
     const phase5 = document.getElementById('phase5');
 
-    const bgMusic = new Audio('https://drive.google.com/uc?export=download&id=139MsZrBYEoBJxIWzYLgkshyfaJPiIkmV');
+    const musicSources = [
+        'https://drive.google.com/uc?export=download&id=139MsZrBYEoBJxIWzYLgkshyfaJPiIkmV',
+        'https://cdn.pixabay.com/audio/2022/10/25/audio_228c89eb81.mp3'
+    ];
+    let currentMusicSource = 0;
+    const bgMusic = new Audio(musicSources[currentMusicSource]);
     bgMusic.loop = true;
     bgMusic.volume = 0.6;
+    bgMusic.addEventListener('error', () => {
+        if (currentMusicSource < musicSources.length - 1) {
+            currentMusicSource += 1;
+            bgMusic.src = musicSources[currentMusicSource];
+            bgMusic.load();
+        }
+    });
 
     let audioCtx;
 
