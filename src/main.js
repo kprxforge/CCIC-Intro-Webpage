@@ -19,13 +19,20 @@ function init() {
     const bgMusic = new Audio(musicSources[currentMusicSource]);
     bgMusic.loop = true;
     bgMusic.volume = 0.6;
-    bgMusic.addEventListener('error', () => {
+    let fallbackAttempted = false;
+    const handleMusicError = () => {
         if (currentMusicSource < musicSources.length - 1) {
+            if (fallbackAttempted) return;
+            fallbackAttempted = true;
             currentMusicSource += 1;
             bgMusic.src = musicSources[currentMusicSource];
             bgMusic.load();
+            return;
         }
-    });
+        console.error('Background music failed to load from all configured sources.');
+        bgMusic.removeEventListener('error', handleMusicError);
+    };
+    bgMusic.addEventListener('error', handleMusicError);
 
     let audioCtx;
 
