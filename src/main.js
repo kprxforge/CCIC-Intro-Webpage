@@ -11,7 +11,7 @@ function init() {
     const phase4 = document.getElementById('phase4');
     const phase5 = document.getElementById('phase5');
 
-    const bgMusic = new Audio('https://cdn.pixabay.com/audio/2022/10/25/audio_228c89eb81.mp3');
+    const bgMusic = new Audio('https://drive.google.com/uc?export=download&id=139MsZrBYEoBJxIWzYLgkshyfaJPiIkmV');
     bgMusic.loop = true;
     bgMusic.volume = 0.6;
 
